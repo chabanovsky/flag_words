@@ -29,9 +29,14 @@ def do_analyse():
     print (count[-15:])
 
     dump_result(count)
+    just_list_of_words = list()
+    for item, num in count:
+        just_list_of_words.append(item)
 
-def dump_result(result):
-    with open('result.csv', 'w') as result_file:
+    dump_result(just_list_of_words, 'result_list.csv')
+
+def dump_result(result, filename='result.csv'):
+    with open(filename, 'w') as result_file:
         wr = csv.writer(result_file, quoting=csv.QUOTE_ALL)
         wr.writerow(result)    
 
