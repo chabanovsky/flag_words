@@ -86,3 +86,11 @@ def build_dataset(words, n_words):
     reversed_dictionary = dict(zip(dictionary.values(), dictionary.keys()))
     return data, count, dictionary, reversed_dictionary
 
+def do_csv_to_string(in_string):
+    prepoccesed = in_string.replace("\"", "")
+    list_of_words = prepoccesed.split(",")
+    out_string = ""
+    for item in list_of_words:
+        out_string += item + "|"
+
+    print (out_string[:-1])
